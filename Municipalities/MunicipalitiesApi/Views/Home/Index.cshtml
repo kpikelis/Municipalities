@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <br />
+    <h2>Municipalities</h2>
+    <br />
+    <h3>This is REST API.</h3>
+
+    <h4>To create Manicipatity Tax please use:</h4>
+    <p>taxes/create/{name}/{date:DateTime}/{period:int}/{tax:decimal}/ </p>
+    <p>E.g. http://localhost:19776/taxes/create/Vilnius/2018-01-01/1/2.5/ </p>
+
+    <h4>To Get Manicipatity Taxse please use:</h4>
+    <p>taxes/{name} </p>
+    <p>taxes/{name}/{date} </p>
+    <p>taxes/{name}/{date}/{period} </p>
+    <p>E.g. http://localhost:19776/taxes/Vilnius/2018-01-01/ </p>
+
+    <br />
+    <h4>Upload Municipalities in xml format</h4>
+    <p>there is file 'ImportData.Xml' in source control</p>
+<br />
+
+    @using (Html.BeginForm("FileUpload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="uploadFile" />
+        <input type="submit" />
+    }<br /><br />
+</body>
+</html>
